@@ -1,0 +1,33 @@
+# Placeholder Images
+
+This folder should contain:
+
+## Project Thumbnails
+- ecommerce-thumb.jpg
+- taskmanager-thumb.jpg  
+- weather-thumb.jpg
+- blog-thumb.jpg
+
+## Project Screenshots
+- ecommerce-home.jpg
+- ecommerce-products.jpg
+- ecommerce-cart.jpg
+- ecommerce-checkout.jpg
+- taskmanager-dashboard.jpg
+- taskmanager-create.jpg
+- taskmanager-collaborate.jpg
+- weather-current.jpg
+- weather-forecast.jpg
+- weather-maps.jpg
+- blog-editor.jpg
+- blog-posts.jpg
+- blog-analytics.jpg
+
+## Image Requirements
+- Thumbnails: 300x200px recommended
+- Screenshots: 800x600px recommended
+- Format: JPG or PNG
+- Optimize for web (compress for faster loading)
+
+
+

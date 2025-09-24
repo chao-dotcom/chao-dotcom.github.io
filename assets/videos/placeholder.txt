@@ -1,0 +1,26 @@
+# Demo Videos
+
+This folder should contain:
+
+## Project Demo Videos
+- demo_ai_storybooks.mp4
+- demo_jigsaws.mp4
+- weather-demo.mp4
+- blog-demo.mp4
+
+## Video Requirements
+- Format: MP4 (H.264 codec recommended)
+- Duration: 1-3 minutes recommended
+- Resolution: 1280x720 (720p) or 1920x1080 (1080p)
+- File size: Keep under 50MB for GitHub Pages
+- Optimize for web streaming
+
+## Video Content Suggestions
+- Show key features and functionality
+- Include smooth transitions
+- Add captions or text overlays for clarity
+- Keep audio clear and professional
+- Consider adding background music (optional)
+
+
+

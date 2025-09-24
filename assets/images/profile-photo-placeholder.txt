@@ -1,0 +1,14 @@
+# Profile Photo
+
+Please add your profile photo as:
+- File name: profile-photo.jpg
+- Location: assets/images/profile-photo.jpg
+- Recommended size: 400x400px or larger (square aspect ratio)
+- Format: JPG or PNG
+- The image will be automatically cropped to a circle
+
+## Image Requirements
+- High quality, professional headshot
+- Good lighting and clear background
+- Square aspect ratio works best
+- File size: Keep under 2MB for web optimization
