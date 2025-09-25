@@ -11,7 +11,6 @@
         "Streamlit",
         "Python",
         "Machine Learning",
-        "NLP",
         "RAG",
         "Ollama",
         "scikit-learn",
@@ -40,13 +39,11 @@
     "title": "Multilingual AI Storybook Platform (Team Work)",
     "thumbnail": "assets/images/aistorybooks_thumbnail.png",
     "cardDescription": "Collaborative platform for AI-generated multilingual picture books",
-    "description": "A collaborative platform for AI-generated picture books, designed to support multilingual learning with scalable database design and seamless team integration.",
+    "description": "A collaborative platform for AI-generated picture books, designed to support multilingual learning with scalable database design and seamless team integration.\n Check out our github: https://github.com/yshyshyshyshysh/AI_PictureBooks_Web?tab=readme-ov-file\nDemo Video: https://www.youtube.com/watch?v=iFsHQ6Nd-lY",
     "skills": [
       "Database Design",
-      "Node.js",
-      "Express.js",
       "REST API",
-      "MongoDB / SQL",
+      "SQL",
       "Cross-team Integration",
       "API Specification & Data Contracts",
       "Multimedia Content Handling"
@@ -60,9 +57,6 @@
       "Support for multilingual content and media-rich storytelling"
     ],
     "screenshots": [
-      "assets/images/aistorybooks-database.jpg",
-      "assets/images/aistorybooks-api.jpg",
-      "assets/images/aistorybooks-ui.jpg"
     ],
     "video": "assets/videos/demo_ai_storybooks.mp4"
   },
@@ -74,13 +68,12 @@
     "description": "A full-stack membership and rental management system developed at National Taiwan University, built with NodeJS and MySQL, and deployed on AWS. Features rental tracking, access control, and intelligent search with SQL + OpenSearch.",
     "skills": [
       "Node.js",
-      "Express.js",
       "MySQL",
       "AWS RDS",
       "AWS S3",
       "AWS CloudWatch",
       "OpenSearch",
-      "JavaScript ES6+",
+      "JavaScript",
       "REST API"
     ],
     "features": [
@@ -92,9 +85,7 @@
       "Scalable deployment on AWS"
     ],
     "screenshots": [
-      "assets/images/jigsaws-dashboard.jpg",
-      "assets/images/jigsaws-rental.jpg",
-      "assets/images/jigsaws-search.jpg"
+
     ],
     "video": "assets/videos/demo_jigsaws.mp4"
   },
@@ -113,9 +104,7 @@
         
       ],
       "screenshots": [
-        "assets/images/weather-current.jpg",
-        "assets/images/weather-forecast.jpg",
-        "assets/images/weather-maps.jpg"
+
       ],
       "video": "assets/videos/beatdrop_demo.mp4"
     }
