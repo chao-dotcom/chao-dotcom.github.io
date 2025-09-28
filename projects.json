@@ -35,6 +35,42 @@
       "video": "assets/videos/careerPathGPT.mp4"
     },
     {
+      "id": "aitutor",
+      "title": "AI Tutor",
+      "thumbnail": "assets/images/aitutor_thumb.png",
+      "cardDescription": "From Upload to Understanding - Upload material and learn right now!",
+      "description": "An advanced AI tutoring system that combines LLM capabilities with MCP (Model Context Protocol) and RAG (Retrieval Augmented Generation) to provide personalized learning experiences. Upload your study materials and get instant, context-aware tutoring with real-time web research and document processing capabilities.",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "LangChain4j",
+        "Open AI Model",
+        "RAG (Retrieval Augmented Generation)",
+        "MCP (Model Context Protocol)",
+        "Maven",
+        "Axios",
+        "Marked",
+        "SSE (Server-Sent Events)"
+      ],
+      "features": [
+        "Real-time AI Chat Interface with streaming responses",
+        "RAG (Retrieval Augmented Generation) for contextual learning",
+        "MCP (Model Context Protocol) integration for tool calling",
+        "Document upload and processing capabilities",
+        "Web scraping and research integration",
+        "Vector-based document similarity search",
+        "File system operations for saving generated content",
+        "Responsive web interface with modern UI/UX",
+        "Socket.io real-time communication",
+        "Typewriter effect for streaming text",
+        "Knowledge base integration",
+        "Multi-tool agent system"
+      ],
+      "screenshots": [
+      ],
+      "video": "assets/videos/aitutor_demo.mp4"
+    },
+    {
     "id": "ai-storybooks",
     "title": "Multilingual AI Storybook Platform (Team Work)",
     "thumbnail": "assets/images/aistorybooks_thumbnail.png",
