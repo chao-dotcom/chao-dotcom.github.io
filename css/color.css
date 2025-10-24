@@ -1,0 +1,230 @@
+/* Color scheme matching the reference exactly */
+
+/* Primary colors from reference */
+:root {
+    --primary-red: #f44336;
+    --primary-blue: #2196f3;
+    --primary-cyan: #00bcd4;
+    --primary-teal: #009688;
+    
+    /* Accent colors */
+    --accent-red: #d32f2f;
+    --accent-blue: #1976d2;
+    --accent-cyan: #0097a7;
+    --accent-teal: #00695c;
+    
+    /* Neutral colors */
+    --dark-gray: #333333;
+    --medium-gray: #666666;
+    --light-gray: #999999;
+    --background-gray: #f8f9fa;
+    --border-gray: #e0e0e0;
+}
+
+/* Red theme for projects page */
+.red.lighten-1 {
+    background-color: var(--primary-red) !important;
+}
+
+.red.darken-1 {
+    background-color: var(--accent-red) !important;
+}
+
+/* Cyan theme for about page */
+.cyan.lighten-1 {
+    background-color: var(--primary-cyan) !important;
+}
+
+.cyan.darken-1 {
+    background-color: var(--accent-cyan) !important;
+}
+
+/* Teal theme for photography page */
+.teal.lighten-1 {
+    background-color: var(--primary-teal) !important;
+}
+
+.teal.darken-1 {
+    background-color: var(--accent-teal) !important;
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--primary-red) !important;
+}
+
+.text-secondary {
+    color: var(--primary-blue) !important;
+}
+
+.text-accent {
+    color: var(--accent-blue) !important;
+}
+
+/* Background colors */
+.bg-primary {
+    background-color: var(--primary-red) !important;
+}
+
+.bg-secondary {
+    background-color: var(--primary-blue) !important;
+}
+
+.bg-light {
+    background-color: var(--background-gray) !important;
+}
+
+/* Border colors */
+.border-primary {
+    border-color: var(--primary-red) !important;
+}
+
+.border-secondary {
+    border-color: var(--primary-blue) !important;
+}
+
+/* Chip colors for different categories */
+.chip.web {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.chip.mobile {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+}
+
+.chip.data {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.chip.frontend {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.chip.backend {
+    background-color: #fce4ec;
+    color: #c2185b;
+}
+
+.chip.fullstack {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+/* Hover effects with colors */
+.gallery-curve-wrapper:hover {
+    border-color: var(--primary-red);
+}
+
+.btn-floating.btn-large:hover {
+    background-color: var(--accent-blue) !important;
+}
+
+/* Tab active states */
+.tabs .tab a.active {
+    color: var(--primary-red) !important;
+}
+
+.tabs .tab a:hover {
+    color: var(--accent-red) !important;
+}
+
+/* Navigation icon colors */
+.nav-icon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-icon:hover {
+    color: white;
+}
+
+/* Link colors */
+a {
+    color: var(--primary-blue);
+}
+
+a:hover {
+    color: var(--accent-blue);
+}
+
+/* Form focus colors - matching reference exactly */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(244, 67, 54) !important;
+    box-shadow: 0 1px 0 0 rgb(244, 67, 54) !important;
+}
+
+.input-field textarea:focus {
+    border-bottom: 1px solid rgb(244, 67, 54) !important;
+    box-shadow: 0 1px 0 0 rgb(244, 67, 54) !important;
+}
+
+.input-field input[type=text]:focus + label {
+    color: rgb(244, 67, 54) !important;
+}
+
+.input-field textarea:focus + label {
+    color: rgb(244, 67, 54) !important;
+}
+
+/* Wave effect colors */
+.waves-effect.waves-main .waves-ripple {
+    background-color: rgba(244, 67, 54, 0.65);
+}
+
+/* Checkbox colors */
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid rgb(3, 169, 244);
+    border-bottom: 2px solid rgb(3, 169, 244);
+}
+
+/* Footer colors */
+footer a {
+    color: rgb(3, 169, 244);
+}
+
+/* Table of contents colors */
+.table-of-contents a:hover {
+    border-left: 1px solid rgb(3, 169, 244) !important;
+}
+
+.table-of-contents a.active {
+    border-left: 2px solid rgb(3, 169, 244) !important;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
+}
+
+.gradient-bg-blue {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+}
+
+/* Shadow colors */
+.shadow-primary {
+    box-shadow: 0 2px 10px rgba(244, 67, 54, 0.2);
+}
+
+.shadow-secondary {
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.2);
+}
+
+/* Status colors */
+.success {
+    color: #4caf50;
+}
+
+.warning {
+    color: #ff9800;
+}
+
+.error {
+    color: var(--primary-red);
+}
+
+.info {
+    color: var(--primary-blue);
+}

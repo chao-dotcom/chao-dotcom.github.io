@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Chao Hsuan Ho</title>
+    <link rel="stylesheet" href="css/projects-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Unified Header -->
+    <header class="unified-header">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Chao Hsuan Ho</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Chao Hsuan Ho</h1>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Projects Grid -->
+            <section class="projects-section">
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="" class="modal-image">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-meta">
+                        <span id="modalSubtitle" class="modal-subtitle"></span>
+                    </div>
+                    <div class="modal-description">
+                        <p id="modalDescription"></p>
+                    </div>
+                    <div class="modal-features">
+                        <h3>Key Features</h3>
+                        <ul id="modalFeatures"></ul>
+                    </div>
+                    <div class="modal-tech">
+                        <h3>Technology Stack</h3>
+                        <div id="modalTech" class="tech-grid"></div>
+                    </div>
+                    <div class="modal-links">
+                        <div id="modalLinks" class="links-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/projects-new.js"></script>
+</body>
+</html>

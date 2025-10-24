@@ -1,3 +1,53 @@
-title: Chao Hsuan
-description: personal website
+# GitHub Pages configuration
+title: Chao Hsuan Ho - Personal Website
+description: Personal website showcasing projects and skills
+author: Chao Hsuan Ho
+email: hochaohsuan@gmail.com
+
+# GitHub Pages settings
+baseurl: "" # Leave empty for username.github.io repositories
+url: "https://chao-dotcom.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
 theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .gitignore
+  - .github/
+  - chao-dotcom.github.io/
+
+# Include files
+include:
+  - _redirects
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO
+seo:
+  type: "Person"
+  name: "Chao Hsuan Ho"
+  description: "Software Engineer specializing in Full-Stack Development and AI/ML"
+  url: "https://chao-dotcom.github.io"
+  image: "/assets/images/profile-photo.jpg"

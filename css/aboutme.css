@@ -1,0 +1,306 @@
+/* About Me page styles matching the reference */
+
+/* Profile card styles */
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    margin-bottom: 1.5rem;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #e0e0e0;
+}
+
+.profile-info h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.profile-title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links .btn-floating {
+    background-color: #00bcd4;
+}
+
+.social-links .btn-floating:hover {
+    background-color: #0097a7;
+}
+
+/* About text styles */
+.about-text {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.about-text h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about-text h4 {
+    color: #00bcd4;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.about-text h4:first-child {
+    margin-top: 0;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.skill-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item h5 {
+    color: #00bcd4;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.skill-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 60px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #00bcd4;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #e0e0e0;
+}
+
+.timeline-content h5 {
+    color: #333;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.timeline-date {
+    color: #00bcd4;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Contact section */
+.contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-buttons .btn {
+    background-color: #00bcd4;
+}
+
+.contact-buttons .btn:hover {
+    background-color: #0097a7;
+}
+
+.contact-buttons .btn.lighten-2 {
+    background-color: #4dd0e1;
+}
+
+.contact-buttons .btn.lighten-2:hover {
+    background-color: #26c6da;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .about-text {
+        padding: 1.5rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-marker {
+        left: 6px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .contact-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .profile-card {
+        padding: 1rem;
+    }
+    
+    .about-text {
+        padding: 1rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline-marker {
+        left: 1px;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Animation for about content */
+.about-content {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.profile-card {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.about-text {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.skill-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+
+.timeline-item {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+
+/* Hover effects */
+.skill-item:hover h5 {
+    color: #0097a7;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-text:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
