@@ -142,6 +142,41 @@ class ProjectsPage {
                 ]
             },
             {
+                id: 'mycss',
+                title: 'My Design System',
+                subtitle: 'React + TypeScript component library',
+                description: 'Premium, animated, accessible component library themed with styled-components, documented in Storybook, with a demo app.',
+                image: 'assets/images/myCSS_thumb.png',
+                features: [
+                    'Buttons (solid/outline/ghost/link) with premium hover shine',
+                    'Inputs, Select (animated listbox), Labels, Badges, Switch',
+                    'Modal (glass surface, motion), Tooltip, Toast, Tabs',
+                    'Accordion, Pagination, Breadcrumbs, Table (green zebra)',
+                    'Avatar, Icon, SegmentedControl',
+                    'Themed with tokens: colors, spacing, radii, elevation, motion',
+                    'WCAG 2.1 AA-minded, keyboard support, visible focus'
+                ],
+                techStack: [
+                    { name: 'React', icon: '⚛️' },
+                    { name: 'TypeScript', icon: '📘' },
+                    { name: 'styled-components', icon: '🎨' },
+                    { name: 'Storybook', icon: '📚' },
+                    { name: 'Vite', icon: '⚡' },
+                    { name: 'Vitest', icon: '🧪' },
+                    { name: 'RTL', icon: '🧩' },
+                    { name: 'axe', icon: '♿' }
+                ],
+                stats: {
+                    duration: 'ongoing',
+                    features: '20+',
+                    users: 'N/A'
+                },
+                links: [
+                    { name: 'Repo', url: 'https://github.com/chao-dotcom/MyCSS', icon: 'fab fa-github' },
+                    { name: 'Demo', url: 'https://strybk.surge.sh/', icon: 'fas fa-external-link-alt' }
+                ]
+            },
+            {
                 id: 'beatdrop',
                 title: 'Beat Drop',
                 subtitle: 'Simple rhythm game built with vanilla JavaScript',
@@ -165,6 +200,7 @@ class ProjectsPage {
                     users: 'N/A'
                 },
                 links: [
+                    { name: 'GitHub', url: 'https://github.com/chao-dotcom/beat-drop', icon: 'fab fa-github' },
                     { name: 'Demo Video', url: 'assets/videos/beatdrop_demo.mp4', icon: 'fas fa-play' }
                 ]
             }
