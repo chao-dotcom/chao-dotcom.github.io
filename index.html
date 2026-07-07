@@ -3,396 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chao Hsuan Ho — Edge AI / On-Device ML Engineer</title>
-<meta name="description" content="Edge AI / on-device ML engineer. I take deep-learning models off the cloud and run them on real hardware — cameras, wearables, edge boxes. Quantization, CUDA, TensorRT. M.S. CS @ Rice.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f46e5'/><text x='50' y='72' font-family='Inter,sans-serif' font-size='62' font-weight='800' fill='white' text-anchor='middle'>C</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<title>Chao Hsuan Ho</title>
+<meta name="description" content="Chao Hsuan Ho — Edge AI / on-device ML. M.S. Computer Science, Rice University.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23202124'/><text x='50' y='71' font-family='Arial' font-size='60' font-weight='700' fill='white' text-anchor='middle'>C</text></svg>">
 <style>
   :root{
-    --ink:#12151b; --ink-soft:#495264; --muted:#79839a; --line:#e7e9ef;
-    --bg:#ffffff; --bg-alt:#f6f7fa; --card:#ffffff;
-    --accent:#4f46e5; --accent-ink:#3730a3; --accent-wash:#eef0fe;
-    --ok:#0f9d76; --ok-wash:#e7f6f0;
-    --radius:16px; --shadow:0 1px 2px rgba(18,21,27,.04),0 8px 24px rgba(18,21,27,.06);
-    --shadow-lg:0 12px 40px rgba(18,21,27,.12);
-    --wrap:1080px;
+    --ink:#202124; --gray:#5f6368; --line:#dadce0; --link:#1a0dab; --bg:#ffffff;
+    --wrap:800px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);
-    background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:16.5px}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  body{font-family:Arial,Helvetica,"Helvetica Neue",sans-serif;color:var(--ink);background:var(--bg);
+    line-height:1.62;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:44px 22px 72px}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .gray{color:var(--gray)}
 
-  /* ---- nav ---- */
-  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);
-    backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{font-weight:800;letter-spacing:-.02em;font-size:1.02rem}
-  .brand .dot{color:var(--accent)}
-  .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a{color:var(--ink-soft);font-weight:500;font-size:.94rem;transition:color .15s}
-  .navlinks a:hover{color:var(--accent)}
-  .navlinks .cta{background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-weight:600}
-  .navlinks .cta:hover{color:#fff;background:var(--accent)}
-  @media(max-width:680px){.navlinks a:not(.cta){display:none}}
+  /* header */
+  header{display:flex;gap:26px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  header img.photo{width:118px;height:118px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:1px solid var(--line)}
+  h1{font-size:28px;font-weight:600;letter-spacing:-.01em;line-height:1.15}
+  .zh{font-size:16px;color:var(--gray);font-weight:400;margin-left:8px}
+  .role{margin-top:4px;font-size:16px}
+  .affil{color:var(--gray);margin-top:2px}
+  .links{margin-top:12px;font-size:14.5px;display:flex;flex-wrap:wrap;gap:4px 0}
+  .links a{white-space:nowrap}
+  .links .sep{color:var(--line);margin:0 9px}
+  @media(max-width:560px){header{flex-direction:column;gap:16px}header img.photo{width:96px;height:96px}}
 
-  /* ---- hero ---- */
-  header.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg,#fbfbff 0%,#f3f5fb 100%)}
-  .hero-inner{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center;
-    padding:76px 0 84px}
-  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-wash);
-    color:var(--accent-ink);font-weight:600;font-size:.82rem;padding:6px 14px;border-radius:999px;
-    border:1px solid #dfe1fb}
-  .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok)}
-  h1.title{font-size:clamp(2.3rem,5.2vw,3.5rem);line-height:1.05;letter-spacing:-.035em;
-    font-weight:800;margin:20px 0 6px}
-  .role{font-size:clamp(1.05rem,2.4vw,1.32rem);color:var(--accent-ink);font-weight:700;letter-spacing:-.01em}
-  .lede{margin-top:18px;font-size:1.08rem;color:var(--ink-soft);max-width:33em}
-  .lede b{color:var(--ink);font-weight:600}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:12px;font-weight:600;
-    font-size:.95rem;border:1px solid var(--line);background:var(--card);transition:.18s;box-shadow:var(--shadow)}
-  .btn svg{width:17px;height:17px}
-  .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .btn.primary:hover{background:var(--accent);border-color:var(--accent)}
-  .hero-photo{position:relative}
-  .hero-photo img{width:100%;height:340px;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-lg);
-    border:5px solid #fff}
-  .photo-cap{position:absolute;bottom:12px;left:12px;right:12px;color:#fff;font-size:.76rem;font-weight:500;
-    background:rgba(10,12,18,.42);backdrop-filter:blur(4px);padding:6px 11px;border-radius:9px;display:flex;
-    align-items:center;gap:7px}
-  @media(max-width:820px){.hero-inner{grid-template-columns:1fr;gap:32px;padding:52px 0 60px}
-    .hero-photo{order:-1;max-width:360px}.hero-photo img{height:220px}}
+  /* bio + interests */
+  .bio{margin-top:22px;color:#3c4043}
+  .interests{margin-top:14px;font-size:14.5px}
+  .interests .label{color:var(--gray)}
 
-  /* ---- sections ---- */
-  section.blk{padding:74px 0}
-  section.alt{background:var(--bg-alt);border-block:1px solid var(--line)}
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:600;color:var(--accent);
-    text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
-  h2.sec{font-size:clamp(1.6rem,3.4vw,2.15rem);letter-spacing:-.03em;font-weight:800;margin-bottom:8px}
-  .sec-sub{color:var(--muted);margin-bottom:38px;max-width:44em}
+  /* sections */
+  h2{font-size:16px;font-weight:600;color:var(--ink);margin:34px 0 4px;padding-bottom:7px;
+    border-bottom:1px solid var(--line)}
+  h2 .cnt{color:var(--gray);font-weight:400;font-size:13px}
 
-  /* ---- about ---- */
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
-  .about p{margin-bottom:16px;color:var(--ink-soft);font-size:1.06rem}
-  .about p b{color:var(--ink)}
-  .about .sig{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.9rem;margin-top:6px}
-  .facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
-    box-shadow:var(--shadow)}
-  .facts h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:14px;
-    font-family:'JetBrains Mono',monospace}
-  .facts dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:.95rem}
-  .facts dt{color:var(--muted)}.facts dd{font-weight:600;text-align:right}
-  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
+  /* list rows (Scholar-style) */
+  .row{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:13px 0;border-bottom:1px solid #eee}
+  .row:last-child{border-bottom:none}
+  .row .t{font-size:15px}
+  .row .t a{font-weight:600}
+  .row .d{grid-column:1/2;color:#3c4043;font-size:14px}
+  .row .m{grid-column:1/2;color:var(--gray);font-size:13px;margin-top:1px}
+  .row .m .metric{color:#0b7a5c}
+  .row .yr{grid-row:1/2;grid-column:2/3;color:var(--gray);font-size:13.5px;white-space:nowrap;text-align:right}
+  .row .rt{grid-column:2/3;grid-row:2/4;align-self:start;text-align:right;font-size:13px;white-space:nowrap}
 
-  /* ---- projects ---- */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
-    display:flex;flex-direction:column;box-shadow:var(--shadow);transition:.2s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#d5d9e6}
-  .card .tag{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;
-    color:var(--accent-ink);background:var(--accent-wash);padding:4px 10px;border-radius:6px;letter-spacing:.02em}
-  .card h3{font-size:1.24rem;letter-spacing:-.02em;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
-  .card p.desc{color:var(--ink-soft);font-size:.97rem;flex-grow:1}
-  .metric{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--ok-wash);
-    color:#0b7a5c;font-weight:700;font-size:.88rem;padding:7px 12px;border-radius:9px;font-family:'JetBrains Mono',monospace}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-  .chip{font-size:.78rem;color:var(--ink-soft);background:#f1f3f8;border:1px solid var(--line);
-    padding:3px 10px;border-radius:999px}
-  .card-links{display:flex;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-  .card-links a{font-weight:600;font-size:.9rem;color:var(--accent-ink);display:inline-flex;align-items:center;gap:6px}
-  .card-links a:hover{text-decoration:underline}
-  .card-links svg{width:15px;height:15px}
+  /* simple two-col meta lines (experience/education) */
+  .item{display:grid;grid-template-columns:1fr auto;gap:2px 18px;padding:12px 0;border-bottom:1px solid #eee}
+  .item:last-child{border-bottom:none}
+  .item .h{font-weight:600}
+  .item .s{grid-column:1/2;color:#3c4043;font-size:14px}
+  .item .w{grid-column:2/3;grid-row:1/2;color:var(--gray);font-size:13.5px;text-align:right;white-space:nowrap}
+  .paper-tag{color:var(--gray);font-size:13px}
 
-  /* ---- experience ---- */
-  .exp{display:flex;flex-direction:column;gap:2px}
-  .xp{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
-  .xp:first-child{border-top:none}
-  .xp .when{color:var(--muted);font-size:.9rem;font-family:'JetBrains Mono',monospace}
-  .xp .co{font-weight:700;font-size:1.08rem;letter-spacing:-.01em}
-  .xp .rl{color:var(--accent-ink);font-weight:600;font-size:.92rem;margin:2px 0 8px}
-  .xp .ds{color:var(--ink-soft);font-size:.98rem}
-  .xp .paper{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:var(--accent-ink);
-    background:var(--accent-wash);padding:3px 10px;border-radius:6px}
-  @media(max-width:640px){.xp{grid-template-columns:1fr;gap:4px}}
-
-  /* ---- skills ---- */
-  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media(max-width:640px){.skills{grid-template-columns:1fr}}
-  .skgroup{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-  .skgroup h3{font-size:.98rem;margin-bottom:14px;display:flex;align-items:center;gap:9px}
-  .skgroup h3 .ic{width:30px;height:30px;display:grid;place-items:center;background:var(--accent-wash);
-    border-radius:8px;font-size:1rem}
-  .skgroup .chips{margin-top:0}
-
-  /* ---- contact ---- */
-  .contact{text-align:center;padding:78px 0}
-  .contact h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.03em;font-weight:800}
-  .contact p{color:var(--ink-soft);max-width:32em;margin:12px auto 30px;font-size:1.08rem}
-  .contact .hero-cta{justify-content:center}
-  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.88rem;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  footer .mono{color:var(--muted)}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray);font-size:13px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">Chao<span class="dot">.</span>Hsuan Ho</a>
-    <div class="navlinks">
-      <a href="#about">About</a>
-      <a href="#work">Projects</a>
-      <a href="#exp">Experience</a>
-      <a href="#skills">Skills</a>
-      <a class="cta" href="mailto:hochaohsuan@gmail.com">Get in touch</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero" id="top">
-  <div class="wrap hero-inner">
+  <header>
+    <img class="photo" src="assets/images/avatar-web.jpg" alt="Chao Hsuan Ho">
     <div>
-      <span class="badge"><span class="pulse"></span>Open to 2027 New-Grad · Edge AI / ML</span>
-      <h1 class="title">I put deep learning<br>where the cloud can't reach.</h1>
-      <p class="role">Edge AI / On-Device ML Engineer</p>
-      <p class="lede">I take models trained on fat cloud GPUs and make them run on whatever's actually in the product — a webcam, a wearable, a Raspberry&nbsp;Pi. <b>Quantize it, write the CUDA kernel, shave the milliseconds, ship it offline.</b></p>
-      <div class="hero-cta">
-        <a class="btn primary" href="#work">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-          See the work</a>
-        <a class="btn" href="assets/resume.pdf" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-          Résumé</a>
-        <a class="btn" href="https://github.com/chao-dotcom" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.7 0-.7 0-.7 1.2 0 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
-          GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/chaohsuan" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3zM6.5 7.7a1.8 1.8 0 1 1 0-3.5 1.8 1.8 0 0 1 0 3.5zM19 19h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8V19h-3V9h3v1.3c.4-.6 1.1-1.5 2.8-1.5 2 0 3.1 1.3 3.1 4z"/></svg>
-          LinkedIn</a>
+      <h1>Chao Hsuan Ho <span class="zh">何兆宣</span></h1>
+      <div class="role">Edge AI / On-Device ML Engineer</div>
+      <div class="affil">M.S. Computer Science, Rice University · Engineering Intern, Logitech</div>
+      <div class="links">
+        <a href="mailto:hochaohsuan@gmail.com">hochaohsuan@gmail.com</a><span class="sep">·</span>
+        <a href="https://github.com/chao-dotcom" target="_blank">GitHub</a><span class="sep">·</span>
+        <a href="https://linkedin.com/in/chaohsuan" target="_blank">LinkedIn</a><span class="sep">·</span>
+        <a href="https://leetcode.com/u/aloyslawerence/" target="_blank">LeetCode</a><span class="sep">·</span>
+        <a href="assets/resume.pdf" target="_blank">CV</a>
       </div>
     </div>
-    <div class="hero-photo">
-      <img src="assets/images/hero-web.jpg" alt="Skyline from SUMMIT One Vanderbilt, NYC" loading="eager">
-      <span class="photo-cap">SUMMIT One Vanderbilt, New York</span>
+  </header>
+
+  <p class="bio">I work on <b>Edge AI</b> — taking deep-learning models trained in the cloud and running them on constrained hardware such as cameras, wearables, and edge devices. My work centers on model quantization, custom CUDA kernels, and latency optimization for real-time, on-device inference. I am currently an engineering intern at Logitech and an M.S. Computer Science student at Rice University (graduating December 2026).</p>
+
+  <div class="interests"><span class="label">Interests:</span>
+    Edge AI · On-Device ML · Computer Vision · Model Quantization · Embedded Systems</div>
+
+  <h2>Publications</h2>
+  <div class="item">
+    <div>
+      <div class="h">On-device inference and offline LLM advisory for a wearable metabolic-health platform</div>
+      <div class="s">C. H. Ho et al. · <i>IEEE MWSCAS 2026</i> (co-author) · multi-sensor fusion + Kalman estimation, a quantized model and small-LM advisor on Raspberry Pi. <span class="paper-tag">— to appear</span></div>
     </div>
+    <div class="w">2026</div>
   </div>
-</header>
 
-<section class="blk" id="about">
-  <div class="wrap">
-    <p class="eyebrow">About</p>
-    <h2 class="sec">What I do</h2>
-    <div class="about-grid">
-      <div class="about">
-        <p>I'm an <b>Edge AI engineer</b>. I take deep-learning models trained in the cloud and make them run on the hardware inside real products — cameras, wearables, edge boxes. In practice that means <b>quantization, custom CUDA kernels, and cutting latency until the model fits the budget.</b></p>
-        <p>That focus runs through my work: a RAW→RGB camera ISP, a from-scratch object tracker, a face-enhancement pipeline on a Snapdragon NPU, an offline LLM assistant on a Raspberry Pi. Different domains, one throughline — <b>take the model off the cloud and make it run on the device.</b></p>
-        <p>I'm currently an engineering intern at <b>Logitech</b>, finishing my M.S. in Computer Science at <b>Rice University</b> (December 2026).</p>
-      </div>
-      <aside class="facts">
-        <h3>At a glance</h3>
-        <dl>
-          <dt>Focus</dt><dd>Edge AI / On-Device ML</dd>
-          <dt>Now</dt><dd>Intern @ Logitech</dd>
-          <dt>School</dt><dd>M.S. CS, Rice '26</dd>
-          <dt>Before</dt><dd>NTU</dd>
-          <dt>Publication</dt><dd>IEEE MWSCAS '26</dd>
-          <dt>Open to</dt><dd>2027 New-Grad</dd>
-          <dt>Based</dt><dd>USA</dd>
-        </dl>
-      </aside>
-    </div>
+  <h2>Projects <span class="cnt">— selected, with measured results</span></h2>
+
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/hybrid_isp" target="_blank">hybrid_isp — RAW→RGB camera ISP (classical + learned)</a></div>
+    <div class="yr">2026</div>
+    <div class="d">A full RAW→RGB image-signal-processing pipeline built two ways — a classical NumPy ISP versus a learned DnCNN denoiser — compared on the standard Kodak benchmark.</div>
+    <div class="m"><span class="metric">+5.98 dB CPSNR vs bilinear (24-image Kodak)</span> · Python, PyTorch</div>
   </div>
-</section>
 
-<section class="blk alt" id="work">
-  <div class="wrap">
-    <p class="eyebrow">Selected work</p>
-    <h2 class="sec">Projects</h2>
-    <p class="sec-sub">Six projects across the stack I focus on — ISP, computer vision, perception, systems, CUDA, and LLMs. Every metric below was measured by running the code.</p>
-    <div class="grid">
-
-      <article class="card">
-        <span class="tag">ISP · EDGE</span>
-        <h3>hybrid_isp</h3>
-        <p class="desc">A RAW→RGB camera pipeline built two ways — a classical NumPy ISP (demosaic → white balance → CCM → tone) versus a learned DnCNN denoiser — compared apples-to-apples on the standard Kodak benchmark.</p>
-        <span class="metric">+5.98 dB CPSNR vs bilinear · 24-img Kodak</span>
-        <div class="chips"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Demosaic</span><span class="chip">PSNR/SSIM</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/hybrid_isp" target="_blank">Code →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">PERCEPTION · CV</span>
-        <h3>mot_tracker</h3>
-        <p class="desc">A SORT-style multi-object tracker written from scratch: a constant-velocity Kalman filter, Hungarian IoU association, full track lifecycle, and a hand-rolled MOTA/MOTP/IDF1 suite validated against the reference <span class="mono">motmetrics</span>.</p>
-        <span class="metric">MOTA 0.447 · IDF1 0.530 · real MOT17</span>
-        <div class="chips"><span class="chip">NumPy</span><span class="chip">Kalman</span><span class="chip">Hungarian</span><span class="chip">State Estimation</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/mot_tracker" target="_blank">Code →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">COMPUTER VISION</span>
-        <h3>DeepTrack</h3>
-        <p class="desc">People tracking implemented from the algorithms up — DeepSORT (Kalman + cascade matching), a Transformer-based tracker, and a ResNet50 + channel-attention person re-ID model with triplet loss.</p>
-        <span class="metric">DeepSORT + Transformer + ReID · MOT20</span>
-        <div class="chips"><span class="chip">PyTorch</span><span class="chip">DeepSORT</span><span class="chip">Re-ID</span><span class="chip">Transformer</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/DeepTrack" target="_blank">Code →</a>
-          <a href="https://youtu.be/WIFTWMEF9Es" target="_blank">▶ Demo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">SYSTEMS · SIMD</span>
-        <h3>vamp — vectorized planner</h3>
-        <p class="desc">An AVX2-vectorized sampling-based motion planner reimplementing the ICRA'24 VAMP paper — hierarchical sphere culling and SLEEF vector math for microsecond collision checking on a 6-DOF arm.</p>
-        <span class="metric">15.27× faster · 0.55 µs / collision check</span>
-        <div class="chips"><span class="chip">C++17</span><span class="chip">AVX2 SIMD</span><span class="chip">Robotics</span><span class="chip">Motion Planning</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/vamp-vectorized-motion-planner" target="_blank">Code →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">CUDA · GPU</span>
-        <h3>CUDA-Hub</h3>
-        <p class="desc">Hands-on GPU programming, from the metal up — CUDA kernels and neural-net primitives progressing from vector-add through tiled GEMM, each with profiling and concrete performance targets.</p>
-        <span class="metric">vector-add → tiled GEMM · profiled</span>
-        <div class="chips"><span class="chip">CUDA</span><span class="chip">C++</span><span class="chip">GEMM</span><span class="chip">HPC</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/CUDA-Hub" target="_blank">Code →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">LLM · MLOps</span>
-        <h3>HermesLLM</h3>
-        <p class="desc">An end-to-end LLM engineering system — multi-source ingestion → RAG → LoRA/DPO fine-tuning → SageMaker deployment behind a FastAPI service. Built on the LLM Engineer's Handbook architecture and extended with a full test suite.</p>
-        <span class="metric">RAG → LoRA/DPO → deploy · ⭐ 5</span>
-        <div class="chips"><span class="chip">Python</span><span class="chip">RAG</span><span class="chip">LoRA / DPO</span><span class="chip">AWS SageMaker</span></div>
-        <div class="card-links">
-          <a href="https://github.com/chao-dotcom/HermesLLM" target="_blank">Code →</a>
-        </div>
-      </article>
-
-    </div>
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/mot_tracker" target="_blank">mot_tracker — from-scratch SORT multi-object tracker</a></div>
+    <div class="yr">2026</div>
+    <div class="d">Constant-velocity Kalman filter, Hungarian IoU association, full track lifecycle, and a hand-written MOTA/MOTP/IDF1 suite validated against the reference motmetrics library.</div>
+    <div class="m"><span class="metric">MOTA 0.447 / IDF1 0.530 on real MOT17</span> · NumPy, SciPy</div>
   </div>
-</section>
 
-<section class="blk" id="exp">
-  <div class="wrap">
-    <p class="eyebrow">Experience</p>
-    <h2 class="sec">Where I've worked</h2>
-    <div class="exp">
-      <div class="xp">
-        <div class="when">Jun – Sep 2026<br>San Jose, CA</div>
-        <div>
-          <div class="co">Logitech</div>
-          <div class="rl">Engineering Intern, On-Device AI</div>
-          <div class="ds">Built an on-device face-enhancement pipeline (detection → super-resolution) targeting the Qualcomm Snapdragon 8 Gen 2 NPU, with INT8 quantization inside a real-time latency budget.</div>
-        </div>
-      </div>
-      <div class="xp">
-        <div class="when">Sep – Dec 2024<br>Taipei</div>
-        <div>
-          <div class="co">QuantaVision</div>
-          <div class="rl">Software Engineer Intern</div>
-          <div class="ds">INT8 Quantization-Aware Training on a real-time medical-imaging detector — kept on-device for patient privacy.</div>
-        </div>
-      </div>
-      <div class="xp">
-        <div class="when">Jun – Aug 2024<br>Taoyuan</div>
-        <div>
-          <div class="co">Advantech</div>
-          <div class="rl">Applied Engineer</div>
-          <div class="ds">A fully-offline venue assistant (RAG → local LLM → text-to-speech) on an NVIDIA-GPU edge box, with a custom CUDA kernel for the audio pre-processing bottleneck.</div>
-        </div>
-      </div>
-      <div class="xp">
-        <div class="when">Research<br>Houston, TX</div>
-        <div>
-          <div class="co">Rice University — The Athena Project</div>
-          <div class="rl">Research, On-Device AI</div>
-          <div class="ds">On-device inference and an offline LLM advisor for a wearable metabolic-health platform (multi-sensor fusion + Kalman estimation, a quantized model plus a small-LM advisor on a Raspberry Pi).</div>
-          <span class="paper">📄 IEEE MWSCAS 2026 · co-author</span>
-        </div>
-      </div>
-    </div>
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/DeepTrack" target="_blank">DeepTrack — deep multi-object tracking</a></div>
+    <div class="yr">2026</div>
+    <div class="rt"><a href="https://youtu.be/WIFTWMEF9Es" target="_blank">[demo]</a></div>
+    <div class="d">DeepSORT (Kalman + cascade matching), a Transformer-based tracker, and a ResNet50 + channel-attention person re-identification model, implemented from the algorithms up.</div>
+    <div class="m">Demonstrated on MOT20 · PyTorch</div>
   </div>
-</section>
 
-<section class="blk alt" id="skills">
-  <div class="wrap">
-    <p class="eyebrow">Toolbox</p>
-    <h2 class="sec">Skills</h2>
-    <div class="skills">
-      <div class="skgroup">
-        <h3><span class="ic">⚡</span> Edge &amp; Optimization</h3>
-        <div class="chips">
-          <span class="chip">Quantization (PTQ/QAT)</span><span class="chip">Pruning</span><span class="chip">TensorRT</span>
-          <span class="chip">ONNX Runtime</span><span class="chip">llama.cpp</span><span class="chip">Latency / Power tuning</span>
-          <span class="chip">On-Device Inference</span>
-        </div>
-      </div>
-      <div class="skgroup">
-        <h3><span class="ic">👁</span> CV &amp; Machine Learning</h3>
-        <div class="chips">
-          <span class="chip">PyTorch</span><span class="chip">Computer Vision</span><span class="chip">Object Detection</span>
-          <span class="chip">Tracking</span><span class="chip">Super-Resolution</span><span class="chip">Sensor Fusion</span>
-          <span class="chip">Deep Learning</span>
-        </div>
-      </div>
-      <div class="skgroup">
-        <h3><span class="ic">🛠</span> Systems &amp; Languages</h3>
-        <div class="chips">
-          <span class="chip">C++</span><span class="chip">Python</span><span class="chip">CUDA</span><span class="chip">SIMD / AVX2</span>
-          <span class="chip">Embedded Linux</span><span class="chip">Multithreading</span><span class="chip">CMake</span>
-        </div>
-      </div>
-      <div class="skgroup">
-        <h3><span class="ic">🔩</span> Platforms</h3>
-        <div class="chips">
-          <span class="chip">Qualcomm Snapdragon</span><span class="chip">Hexagon NPU</span><span class="chip">NVIDIA GPU</span>
-          <span class="chip">Raspberry Pi</span><span class="chip">Qualcomm AI Hub</span>
-        </div>
-      </div>
-    </div>
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/vamp-vectorized-motion-planner" target="_blank">vamp — vectorized motion planner (AVX2 SIMD)</a></div>
+    <div class="yr">2025</div>
+    <div class="d">A SIMD-vectorized sampling-based motion planner reimplementing the ICRA 2024 VAMP paper, with hierarchical sphere culling and SLEEF vector math for a 6-DOF arm.</div>
+    <div class="m"><span class="metric">15.27× speedup, 0.55 µs / collision check</span> · C++17, AVX2</div>
   </div>
-</section>
 
-<section class="contact" id="contact">
-  <div class="wrap">
-    <p class="eyebrow" style="text-align:center">Contact</p>
-    <h2>Let's talk on-device AI.</h2>
-    <p>Open to full-time Edge AI / ML / computer-vision / embedded roles starting 2027.</p>
-    <div class="hero-cta">
-      <a class="btn primary" href="mailto:hochaohsuan@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
-        hochaohsuan@gmail.com</a>
-      <a class="btn" href="https://github.com/chao-dotcom" target="_blank">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/chaohsuan" target="_blank">LinkedIn</a>
-      <a class="btn" href="https://leetcode.com/u/aloyslawerence/" target="_blank">LeetCode</a>
-    </div>
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/CUDA-Hub" target="_blank">CUDA-Hub — GPU kernels & NN primitives</a></div>
+    <div class="yr">2026</div>
+    <div class="d">Hands-on CUDA programming from vector-add through tiled GEMM and neural-network primitives, each with profiling and performance targets.</div>
+    <div class="m">CUDA, C++</div>
   </div>
-</section>
 
-<footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px">
-    <span>© 2026 Chao Hsuan Ho (何兆宣)</span>
-    <span class="mono">Edge AI / On-Device ML Engineer</span>
+  <div class="row">
+    <div class="t"><a href="https://github.com/chao-dotcom/HermesLLM" target="_blank">HermesLLM — end-to-end LLM system</a></div>
+    <div class="yr">2026</div>
+    <div class="d">Data ingestion → RAG → LoRA/DPO fine-tuning → SageMaker deployment behind a FastAPI service; built on the LLM Engineer's Handbook architecture and extended with a test suite.</div>
+    <div class="m">Python, PyTorch, AWS</div>
   </div>
-</footer>
 
+  <h2>Experience</h2>
+  <div class="item">
+    <div><div class="h">Logitech — Engineering Intern, On-Device AI</div>
+      <div class="s">On-device face-enhancement pipeline (detection → super-resolution) on the Qualcomm Snapdragon 8 Gen 2 NPU, with INT8 quantization in a real-time latency budget.</div></div>
+    <div class="w">Jun – Sep 2026</div>
+  </div>
+  <div class="item">
+    <div><div class="h">QuantaVision — Software Engineer Intern</div>
+      <div class="s">INT8 Quantization-Aware Training on a real-time medical-imaging detector, kept on-device for patient privacy.</div></div>
+    <div class="w">Sep – Dec 2024</div>
+  </div>
+  <div class="item">
+    <div><div class="h">Advantech — Applied Engineer</div>
+      <div class="s">Fully-offline venue assistant (RAG → local LLM → text-to-speech) on an NVIDIA edge box, with a custom CUDA kernel for the audio pre-processing bottleneck.</div></div>
+    <div class="w">Jun – Aug 2024</div>
+  </div>
+  <div class="item">
+    <div><div class="h">Rice University — Research, The Athena Project</div>
+      <div class="s">On-device inference and an offline LLM advisor for a wearable metabolic-health platform (see Publications).</div></div>
+    <div class="w">2025 – 2026</div>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div><div class="h">Rice University</div><div class="s">M.S., Computer Science</div></div>
+    <div class="w">Dec 2026</div>
+  </div>
+  <div class="item">
+    <div><div class="h">National Taiwan University</div><div class="s">B.S.</div></div>
+    <div class="w">—</div>
+  </div>
+
+  <footer>
+    <span>Chao Hsuan Ho · 何兆宣</span>
+    <span>Open to full-time Edge AI / ML roles, 2027</span>
+  </footer>
+
+</div>
 </body>
 </html>
