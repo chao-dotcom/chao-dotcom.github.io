@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chao Hsuan Ho — Edge AI / On-Device ML Engineer</title>
 <meta name="description" content="Edge AI / on-device ML engineer. I take deep-learning models off the cloud and run them on real hardware — cameras, wearables, edge boxes. Quantization, CUDA, TensorRT. M.S. CS @ Rice.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌘</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f46e5'/><text x='50' y='72' font-family='Inter,sans-serif' font-size='62' font-weight='800' fill='white' text-anchor='middle'>C</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -48,9 +48,7 @@
   .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-wash);
     color:var(--accent-ink);font-weight:600;font-size:.82rem;padding:6px 14px;border-radius:999px;
     border:1px solid #dfe1fb}
-  .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(15,157,118,.5);
-    animation:pulse 2.2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(15,157,118,.45)}70%{box-shadow:0 0 0 9px rgba(15,157,118,0)}100%{box-shadow:0 0 0 0 rgba(15,157,118,0)}}
+  .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok)}
   h1.title{font-size:clamp(2.3rem,5.2vw,3.5rem);line-height:1.05;letter-spacing:-.035em;
     font-weight:800;margin:20px 0 6px}
   .role{font-size:clamp(1.05rem,2.4vw,1.32rem);color:var(--accent-ink);font-weight:700;letter-spacing:-.01em}
@@ -183,24 +181,23 @@
     </div>
     <div class="hero-photo">
       <img src="assets/images/hero-web.jpg" alt="Skyline from SUMMIT One Vanderbilt, NYC" loading="eager">
-      <span class="photo-cap">🌆 SUMMIT One Vanderbilt, NYC</span>
+      <span class="photo-cap">SUMMIT One Vanderbilt, New York</span>
     </div>
   </div>
 </header>
 
 <section class="blk" id="about">
   <div class="wrap">
-    <p class="eyebrow">// about</p>
-    <h2 class="sec">The short version</h2>
+    <p class="eyebrow">About</p>
+    <h2 class="sec">What I do</h2>
     <div class="about-grid">
       <div class="about">
-        <p>I'm an <b>Edge AI engineer</b>. The interesting part of ML isn't the training run on a cluster — it's the moment you have to make that model run on the thing people actually hold: a camera, a headset, a battery-powered sensor that can't phone home. That's where I live: <b>quantization, custom CUDA kernels, and squeezing latency until it fits the budget.</b></p>
-        <p>That thread runs through everything I build — a RAW→RGB camera ISP, a from-scratch object tracker, a face-enhancement pipeline on a Snapdragon NPU, an offline LLM assistant on a Raspberry Pi. Different industries, same moat: <b>take the model off the cloud and make it real on hardware.</b></p>
-        <p>Right now I'm doing exactly that as an intern at <b>Logitech</b>, while wrapping up my M.S. in Computer Science at <b>Rice</b> (Dec 2026). When I'm not doing that, I'm grinding LeetCode (occasionally LeetCrying), or in the pool pretending I'm a seal discovering recursion. Somewhere on the dark side of the moon, a Bowie fan named Norman approves.</p>
-        <p class="sig">$ whoami → on-device ML · CV · embedded · always shipping</p>
+        <p>I'm an <b>Edge AI engineer</b>. I take deep-learning models trained in the cloud and make them run on the hardware inside real products — cameras, wearables, edge boxes. In practice that means <b>quantization, custom CUDA kernels, and cutting latency until the model fits the budget.</b></p>
+        <p>That focus runs through my work: a RAW→RGB camera ISP, a from-scratch object tracker, a face-enhancement pipeline on a Snapdragon NPU, an offline LLM assistant on a Raspberry Pi. Different domains, one throughline — <b>take the model off the cloud and make it run on the device.</b></p>
+        <p>I'm currently an engineering intern at <b>Logitech</b>, finishing my M.S. in Computer Science at <b>Rice University</b> (December 2026).</p>
       </div>
       <aside class="facts">
-        <h3>// at a glance</h3>
+        <h3>At a glance</h3>
         <dl>
           <dt>Focus</dt><dd>Edge AI / On-Device ML</dd>
           <dt>Now</dt><dd>Intern @ Logitech</dd>
@@ -217,9 +214,9 @@
 
 <section class="blk alt" id="work">
   <div class="wrap">
-    <p class="eyebrow">// selected work</p>
-    <h2 class="sec">Things I built &amp; measured</h2>
-    <p class="sec-sub">Six projects across the pipeline I own — ISP, computer vision, perception, systems, CUDA, and LLMs. Every number below came from actually running the code, not a slide.</p>
+    <p class="eyebrow">Selected work</p>
+    <h2 class="sec">Projects</h2>
+    <p class="sec-sub">Six projects across the stack I focus on — ISP, computer vision, perception, systems, CUDA, and LLMs. Every metric below was measured by running the code.</p>
     <div class="grid">
 
       <article class="card">
@@ -295,8 +292,8 @@
 
 <section class="blk" id="exp">
   <div class="wrap">
-    <p class="eyebrow">// experience</p>
-    <h2 class="sec">Where I've shipped</h2>
+    <p class="eyebrow">Experience</p>
+    <h2 class="sec">Where I've worked</h2>
     <div class="exp">
       <div class="xp">
         <div class="when">Jun – Sep 2026<br>San Jose, CA</div>
@@ -337,8 +334,8 @@
 
 <section class="blk alt" id="skills">
   <div class="wrap">
-    <p class="eyebrow">// toolbox</p>
-    <h2 class="sec">What I work with</h2>
+    <p class="eyebrow">Toolbox</p>
+    <h2 class="sec">Skills</h2>
     <div class="skills">
       <div class="skgroup">
         <h3><span class="ic">⚡</span> Edge &amp; Optimization</h3>
@@ -376,9 +373,9 @@
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow" style="text-align:center">// say hi</p>
-    <h2>Let's put a model somewhere it shouldn't fit.</h2>
-    <p>I'm open to full-time Edge AI / ML / computer-vision / embedded roles starting 2027 — and always happy to talk on-device AI.</p>
+    <p class="eyebrow" style="text-align:center">Contact</p>
+    <h2>Let's talk on-device AI.</h2>
+    <p>Open to full-time Edge AI / ML / computer-vision / embedded roles starting 2027.</p>
     <div class="hero-cta">
       <a class="btn primary" href="mailto:hochaohsuan@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
@@ -392,8 +389,8 @@
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px">
-    <span>© 2026 Chao Hsuan Ho · Ho, Chao Hsuan (何兆宣)</span>
-    <span class="mono">built for the edge 🌘 · "leave the capsule if you dare"</span>
+    <span>© 2026 Chao Hsuan Ho (何兆宣)</span>
+    <span class="mono">Edge AI / On-Device ML Engineer</span>
   </div>
 </footer>
 
